@@ -1,12 +1,16 @@
 package controller;
 
+import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
 import model.Height;
 import model.Ladder;
 import model.LadderGenerator;
+import model.Players;
+import model.Prizes;
 import model.Width;
+import util.Parser;
 import view.InputView;
 import view.OutputView;
 
@@ -23,10 +27,26 @@ public class LadderGameController {
     }
 
     public void run() {
-        Width width = new Width(inputView.inputWidth());
+        String strPlayerNames = inputView.inputPlayerNames();
+        List<String> playerNames = Parser.parseStringToList(strPlayerNames);
+        Players players = new Players(playerNames);
+
+        String strPrizeNames = inputView.inputPrizeNames();
+        List<String> prizeNames = Parser.parseStringToList(strPrizeNames);
+        Prizes prizes = new Prizes(prizeNames);
+
+        Width width = new Width(players.size());
         Height height = new Height(inputView.inputHeight());
         Ladder ladder = ladderGenerator.generate(height, width);
 
-        outputView.printExecuteResult(ladder);
+        outputView.printExecuteResult(ladder, players, prizes);
+
+        String resultViewerName = inputView.inputResultViewerName();
+
+        if (resultViewerName.equals("all")) {
+            outputView.printAllPlayerResult(ladder, players, prizes);
+        } else {
+            outputView.printSinglePlayerResult(ladder, players, prizes, resultViewerName);
+        }
     }
 }
