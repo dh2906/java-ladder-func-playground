@@ -1,13 +1,13 @@
 package model;
 
-import util.InputValidator;
+import util.Validator;
 
 public class Height {
 
     private final int height;
 
     public Height(int height) {
-        InputValidator.validateNotNegative(height);
+        Validator.validateNotNegative(height);
 
         this.height = height;
     }
