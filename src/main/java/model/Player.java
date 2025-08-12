@@ -7,6 +7,8 @@ public class Player {
 
     private final String name;
 
+    private static final int MAX_NAME_LENGTH = 5;
+
     public Player(String name) {
         validate(name);
 
@@ -29,7 +31,7 @@ public class Player {
     }
 
     private void validateNameLength(String name) {
-        if (name.length() > 5) {
+        if (name.length() > MAX_NAME_LENGTH) {
             throw new CustomException(ErrorMessage.NAME_LENGTH);
         }
     }
