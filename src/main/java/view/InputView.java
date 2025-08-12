@@ -6,6 +6,7 @@ import java.util.Scanner;
 import exception.CustomException;
 import exception.ErrorMessage;
 import model.Height;
+import model.Players;
 import model.Width;
 
 public class InputView {
@@ -16,16 +17,16 @@ public class InputView {
         this.sc = sc;
     }
 
-    public Width inputWidth() {
+    public int inputWidth() {
         System.out.println("사다리의 너비는 몇 개 인가요?");
 
-        return new Width(inputValue());
+        return inputValue();
     }
 
-    public Height inputHeight() {
+    public int inputHeight() {
         System.out.println("사다리의 높이는 몇 개 인가요?");
 
-        return new Height(inputValue());
+        return inputValue();
     }
 
     private int inputValue() {
@@ -34,5 +35,10 @@ public class InputView {
         } catch (InputMismatchException ex) {
             throw new CustomException(ErrorMessage.INVALID_INTEGER_FORMAT);
         }
+    }
+
+    public Players inputPlayerNames() {
+        System.out.println("참여할 사람의 이름을 입력하세요. (이름은 쉼표(,)로 구분하세요.");
+
     }
 }

@@ -23,8 +23,8 @@ public class LadderGameController {
     }
 
     public void run() {
-        Width width = inputView.inputWidth();
-        Height height = inputView.inputHeight();
+        Width width = new Width(inputView.inputWidth());
+        Height height = new Height(inputView.inputHeight());
         Ladder ladder = ladderGenerator.generate(height, width);
 
         outputView.printExecuteResult(ladder);
