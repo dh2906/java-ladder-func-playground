@@ -23,4 +23,14 @@ public class Line {
 
         System.out.println("|");
     }
+
+    public int move(int index) {
+        if (index < connections.size() && connections.get(index)) {
+            return index + 1;
+        } else if (index > 0 && connections.get(index - 1)) {
+            return index - 1;
+        }
+
+        return index;
+    }
 }
