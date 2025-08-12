@@ -24,13 +24,13 @@ public class Player {
 
     private void validateNameEmpty(String name) {
         if (name == null || name.isBlank()) {
-            throw new CustomException(ErrorMessage.INVALID_NAME_EMPTY);
+            throw new CustomException(ErrorMessage.EMPTY_NAME);
         }
     }
 
     private void validateNameLength(String name) {
         if (name.length() > 5) {
-            throw new CustomException(ErrorMessage.INVALID_NAME_LENGTH);
+            throw new CustomException(ErrorMessage.NAME_LENGTH);
         }
     }
 }

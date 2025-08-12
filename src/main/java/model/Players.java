@@ -18,7 +18,7 @@ public class Players {
 
     public void validate(List<String> playerNames) {
         if (playerNames == null || playerNames.isEmpty()) {
-            throw new CustomException(ErrorMessage.INVALID_PLAYER_NAMES_EMPTY);
+            throw new CustomException(ErrorMessage.PLAYER_NAMES_EMPTY);
         }
     }
 
