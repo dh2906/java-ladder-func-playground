@@ -5,9 +5,6 @@ import java.util.Scanner;
 
 import exception.CustomException;
 import exception.ErrorMessage;
-import model.Height;
-import model.Players;
-import model.Width;
 
 public class InputView {
 
@@ -37,8 +34,9 @@ public class InputView {
         }
     }
 
-    public Players inputPlayerNames() {
+    public String inputPlayerNames() {
         System.out.println("참여할 사람의 이름을 입력하세요. (이름은 쉼표(,)로 구분하세요.");
 
+        return sc.nextLine();
     }
 }
