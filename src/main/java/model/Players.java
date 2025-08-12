@@ -39,4 +39,13 @@ public class Players {
     public List<Player> getPlayers() {
         return players;
     }
+
+    public int indexOf(String name) {
+        for (int i = 0; i < players.size(); i++) {
+            if (players.get(i).getName().equals(name)) {
+                return i;
+            }
+        }
+        throw new CustomException(ErrorMessage.PLAYER_NOT_FOUND);
+    }
 }
