@@ -30,7 +30,7 @@ public class InputView {
         try {
             return sc.nextInt();
         } catch (InputMismatchException ex) {
-            throw new CustomException(ErrorMessage.INVALID_INTEGER_FORMAT);
+            throw new CustomException(ErrorMessage.NOT_INTEGER_FORMAT);
         }
     }
 
