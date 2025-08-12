@@ -15,7 +15,7 @@ public class Prize {
 
     private void validate(String prize) {
         if (prize == null || prize.isBlank()) {
-            throw new CustomException(ErrorMessage.PRIZE_EMTPY);
+            throw new CustomException(ErrorMessage.PRIZE_EMPTY);
         }
     }
 

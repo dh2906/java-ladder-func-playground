@@ -18,7 +18,7 @@ public class Prizes {
 
     private void validate(List<String> prizes) {
         if (prizes == null || prizes.isEmpty()) {
-            throw new CustomException(ErrorMessage.PRIZES_EMTPY);
+            throw new CustomException(ErrorMessage.PRIZES_EMPTY);
         }
     }
 

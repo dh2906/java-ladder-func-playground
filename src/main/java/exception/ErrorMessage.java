@@ -7,8 +7,9 @@ public enum ErrorMessage {
     EMPTY_NAME("이름이 비어있습니다."),
     NAME_LENGTH("이름이 5글자를 넘었습니다."),
     PLAYER_NAMES_EMPTY("참여자가 존재하지 않습니다"),
-    PRIZE_EMTPY("당첨 결과가 비어있습니다."),
-    PRIZES_EMTPY("당첨 결과 리스트가 비어있습니다.");
+    PRIZE_EMPTY("당첨 결과가 비어있습니다."),
+    PRIZES_EMPTY("당첨 결과 리스트가 비어있습니다."),
+    PLAYER_NOT_FOUND("해당 플레이어를 찾을 수 없습니다.");
 
     private final String message;
 
