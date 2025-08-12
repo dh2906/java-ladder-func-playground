@@ -33,4 +33,8 @@ public class Line {
 
         return index;
     }
+
+    public List<Boolean> getConnections() {
+        return connections;
+    }
 }
