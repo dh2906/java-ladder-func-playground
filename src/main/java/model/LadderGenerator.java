@@ -12,20 +12,20 @@ public class LadderGenerator {
         this.random = random;
     }
 
-    public Ladder generate(int height, int width) {
+    public Ladder generate(Height height, Width width) {
         List<Line> lines = new ArrayList<>();
 
-        for (int i = 0; i < height; i++) {
-            lines.add(new Line(generateConnections(width - 1)));
+        for (int i = 0; i < height.getHeight(); i++) {
+            lines.add(new Line(generateConnections(width)));
         }
 
         return new Ladder(height, lines);
     }
 
-    private List<Boolean> generateConnections(int size) {
+    private List<Boolean> generateConnections(Width width) {
         List<Boolean> connections = new ArrayList<>();
 
-        for (int i = 0; i < size; i++) {
+        for (int i = 0; i < width.getWidth() - 1; i++) {
             if (i > 0 && connections.get(i - 1)) {
                 connections.add(false);
             } else {
