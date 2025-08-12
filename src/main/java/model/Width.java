@@ -1,13 +1,13 @@
 package model;
 
-import util.Validator;
+import util.SizeValidator;
 
 public class Width {
 
     private final int width;
 
     public Width(int width) {
-        Validator.validateNotNegative(width);
+        SizeValidator.validateNotNegative(width);
 
         this.width = width;
     }
