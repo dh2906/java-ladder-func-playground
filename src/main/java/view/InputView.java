@@ -39,4 +39,10 @@ public class InputView {
 
         return sc.nextLine();
     }
+
+    public String inputPrizeNames() {
+        System.out.println("실행 결과를 입력하세요. (결과는 쉼표(,)로 구분하세요)\n");
+
+        return sc.nextLine();
+    }
 }
