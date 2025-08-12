@@ -11,4 +11,10 @@ public class Ladder {
         this.height = height;
         this.lines = lines;
     }
+
+    public void print() {
+        for (Line line : lines) {
+            line.print();
+        }
+    }
 }
