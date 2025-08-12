@@ -27,13 +27,8 @@ public class LadderGameController {
     }
 
     public void run() {
-        String strPlayerNames = inputView.inputPlayerNames();
-        List<String> playerNames = Parser.parseStringToList(strPlayerNames);
-        Players players = new Players(playerNames);
-
-        String strPrizeNames = inputView.inputPrizeNames();
-        List<String> prizeNames = Parser.parseStringToList(strPrizeNames);
-        Prizes prizes = new Prizes(prizeNames);
+        Players players = inputPlayers();
+        Prizes prizes = inputPrizes();
 
         Width width = new Width(players.size());
         Height height = new Height(inputView.inputHeight());
@@ -41,9 +36,27 @@ public class LadderGameController {
 
         outputView.printExecuteResult(ladder, players, prizes);
 
+        printResultByViewerName(ladder, players, prizes);
+    }
+
+    private Players inputPlayers() {
+        String strPlayerNames = inputView.inputPlayerNames();
+        List<String> playerNames = Parser.parseStringToList(strPlayerNames);
+
+        return new Players(playerNames);
+    }
+
+    private Prizes inputPrizes() {
+        String strPrizeNames = inputView.inputPrizeNames();
+        List<String> prizeNames = Parser.parseStringToList(strPrizeNames);
+
+        return new Prizes(prizeNames);
+    }
+
+    private void printResultByViewerName(Ladder ladder, Players players, Prizes prizes) {
         String resultViewerName = inputView.inputResultViewerName();
 
-        if (resultViewerName.equals("all")) {
+        if (resultViewerName.equalsIgnoreCase("all")) {
             outputView.printAllPlayerResult(ladder, players, prizes);
         } else {
             outputView.printSinglePlayerResult(ladder, players, prizes, resultViewerName);
