@@ -11,11 +11,11 @@ public class Prizes {
     private final List<Prize> prizes;
 
     public Prizes(List<String> prizes) {
-        validate(prizes);
+        validateEmpty(prizes);
         this.prizes = init(prizes);
     }
 
-    private void validate(List<String> prizes) {
+    private void validateEmpty(List<String> prizes) {
         if (prizes == null || prizes.isEmpty()) {
             throw new CustomException(ErrorMessage.PRIZES_EMPTY);
         }
