@@ -8,6 +8,12 @@ import model.Prizes;
 
 public class OutputView {
 
+    private final LadderView ladderView;
+
+    public OutputView(LadderView ladderView) {
+        this.ladderView = ladderView;
+    }
+
     public void printExecuteResult(Ladder ladder, Players players, Prizes prizes) {
         System.out.println("\n사다리결과\n");
 
@@ -17,7 +23,7 @@ public class OutputView {
 
         System.out.println();
 
-        ladder.print();
+        ladderView.print(ladder);
 
         for (Prize prize : prizes.getPrizes()) {
             System.out.printf("%-4s ", prize.getPrize());
