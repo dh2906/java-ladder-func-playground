@@ -12,12 +12,6 @@ public class Ladder {
         this.lines = lines;
     }
 
-    public void print() {
-        for (Line line : lines) {
-            line.print();
-        }
-    }
-
     public int move(int index) {
         int position = index;
 

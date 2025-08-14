@@ -10,20 +10,6 @@ public class Line {
         this.connections = connections;
     }
 
-    public void print() {
-        for (boolean connection : connections) {
-            System.out.print("|");
-
-            if (connection) {
-                System.out.print("-----");
-            } else {
-                System.out.print("     ");
-            }
-        }
-
-        System.out.println("|");
-    }
-
     public int move(int index) {
         if (index < connections.size() && connections.get(index)) {
             return index + 1;
