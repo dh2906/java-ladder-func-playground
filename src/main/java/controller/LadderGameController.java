@@ -4,12 +4,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
-import model.Height;
-import model.Ladder;
-import model.LadderGenerator;
-import model.Players;
-import model.Prizes;
-import model.Width;
+import model.*;
 import util.Parser;
 import view.InputView;
 import view.OutputView;
