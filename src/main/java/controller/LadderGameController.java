@@ -7,6 +7,8 @@ import java.util.Scanner;
 import model.*;
 import util.Parser;
 import view.InputView;
+import view.LadderView;
+import view.LineView;
 import view.OutputView;
 
 public class LadderGameController {
@@ -17,9 +19,13 @@ public class LadderGameController {
 
     private static final String VIEW_ALL = "all";
 
-    public LadderGameController() {
+    public LadderGameController(
+        LadderGenerator ladderGenerator,
+        OutputView outputView,
+        InputView inputView
+    ) {
         this.ladderGenerator = new LadderGenerator(new Random());
-        this.outputView = new OutputView();
+        this.outputView = new OutputView(new LadderView(new LineView()));
         this.inputView = new InputView(new Scanner(System.in));
     }
 
