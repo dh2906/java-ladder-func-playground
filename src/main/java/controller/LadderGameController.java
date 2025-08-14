@@ -15,6 +15,8 @@ public class LadderGameController {
     private final OutputView outputView;
     private final InputView inputView;
 
+    private static final String VIEW_ALL = "all";
+
     public LadderGameController() {
         this.ladderGenerator = new LadderGenerator(new Random());
         this.outputView = new OutputView();
@@ -51,7 +53,7 @@ public class LadderGameController {
     private void printResultByViewerName(Ladder ladder, Players players, Prizes prizes) {
         String resultViewerName = inputView.inputResultViewerName();
 
-        if (resultViewerName.equalsIgnoreCase("all")) {
+        if (resultViewerName.equalsIgnoreCase(VIEW_ALL)) {
             outputView.printAllPlayerResult(ladder, players, prizes);
         } else {
             outputView.printSinglePlayerResult(ladder, players, prizes, resultViewerName);
