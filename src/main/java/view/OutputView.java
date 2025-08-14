@@ -39,13 +39,11 @@ public class OutputView {
     }
 
     public void printSinglePlayerResult(Ladder ladder, Players players, Prizes prizes, String playerName) {
-        System.out.println();
-
         int index = players.indexOf(playerName);
         int position = ladder.move(index);
         String prize = prizes.getPrizes().get(position).getPrize();
 
-        System.out.println("실행결과");
+        System.out.println("\n실행결과");
         System.out.println(prize);
     }
 }
