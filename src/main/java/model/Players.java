@@ -11,12 +11,11 @@ public class Players {
     private final List<Player> players;
 
     public Players(List<String> playerNames) {
-        validate(playerNames);
-
+        validateEmpty(playerNames);
         this.players = init(playerNames);
     }
 
-    public void validate(List<String> playerNames) {
+    public void validateEmpty(List<String> playerNames) {
         if (playerNames == null || playerNames.isEmpty()) {
             throw new CustomException(ErrorMessage.PLAYER_NAMES_EMPTY);
         }
