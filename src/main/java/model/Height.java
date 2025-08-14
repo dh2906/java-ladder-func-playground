@@ -8,7 +8,6 @@ public class Height {
 
     public Height(int height) {
         SizeValidator.validateNotNegative(height);
-
         this.height = height;
     }
 

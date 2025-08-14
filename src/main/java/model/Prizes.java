@@ -12,7 +12,6 @@ public class Prizes {
 
     public Prizes(List<String> prizes) {
         validate(prizes);
-
         this.prizes = init(prizes);
     }
 

@@ -8,7 +8,6 @@ public class Width {
 
     public Width(int width) {
         SizeValidator.validateNotNegative(width);
-
         this.width = width;
     }
 

@@ -9,7 +9,6 @@ public class Prize {
 
     public Prize(String prize) {
         validate(prize);
-
         this.prize = prize;
     }
 
